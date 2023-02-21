@@ -107,8 +107,8 @@ async fn get_send<'a, A: WxApiRequestBuilder, R: DeserializeOwned, P: Serialize>
     param: &'a P,
 ) -> SdkResult<R> {
     let builder = api_builder.wx_get(url).await?.query(param);
-    let res = builder.send().await?.json::<R>().await?;
-    Ok(res)
+    let res = builder.send().await?.json::<CommonResponse<R>>().await?;
+    res.into()
 }
 
 async fn post_send<'a, A: WxApiRequestBuilder, R: DeserializeOwned, D: Serialize>(
