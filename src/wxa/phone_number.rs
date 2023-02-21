@@ -4,7 +4,7 @@ use serde::{Deserialize, Serialize};
 
 #[derive(Debug, Serialize, Deserialize)]
 pub struct PhoneNumber {
-    phone_info: PhoneInfo,
+    pub phone_info: PhoneInfo,
 }
 
 #[derive(Debug, Serialize, Deserialize)]
