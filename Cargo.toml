@@ -18,6 +18,7 @@ default = ["mp"]
 mp = []
 pay = []
 wxa = []
+rustls-tls = ["reqwest/rustls-tls"]
 
 [dependencies]
 anyhow = "1.0"
