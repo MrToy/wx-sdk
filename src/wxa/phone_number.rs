@@ -10,10 +10,14 @@ pub struct PhoneNumber {
 #[derive(Debug, Serialize, Deserialize)]
 pub struct PhoneInfo {
     /// 用户绑定的手机号（国外手机号会有区号）
+    #[serde(rename = "phoneNumber")]
     pub phone_number: String,
+
     /// 没有区号的手机号
+    #[serde(rename = "purePhoneNumber")]
     pub pure_phone_number: String,
     /// 区号
+    #[serde(rename = "countryCode")]
     pub country_code: String,
     /// 数据水印
     pub watermark: Watermark,
